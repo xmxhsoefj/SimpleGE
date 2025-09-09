@@ -1,0 +1,6 @@
+// SPDX-License-Identifier: MPL-2.0
+
+#define SIMPLEGE_MODE_DEBUG     1
+#define ENABLE_FOO              1
+#define MAX_BUF                 1024
+// debug
