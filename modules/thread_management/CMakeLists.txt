@@ -1,5 +1,5 @@
 add_library(SGE_ThreadManagement STATIC
-  src/thread_management.cpp
+  src/thread_pool.cpp
 )
 
 target_include_directories(SGE_ThreadManagement
