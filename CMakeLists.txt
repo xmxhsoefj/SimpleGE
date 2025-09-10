@@ -21,6 +21,7 @@ add_subdirectory(config)
 
 set(MODULE_DIRS
   modules/utils
+  modules/thread_management
 )
 list(SORT MODULE_DIRS)
 
