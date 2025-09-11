@@ -6,14 +6,14 @@
 #include <atomic>
 #include <cstddef>
 
-template<typename T, size_t len> // might need to reuse it - will see
+template<typename T, size_t buf_size>
 class LockFreeQueue {
 public:
-    LockFreeQueue();
-    bool push(const T &val);
-    bool pop(T &res);
+    size_t push(const T &val);
+    size_t pop(T &res);
 private:
-    // TODO: check if ill think of a better container
-    std::array<T, len> buf;
+    std::array<T, buf_size> buf;
     std::atomic<size_t> head{0}, tail{0};
 };
+
+#include "lock-free_queue_impl.hpp"
