@@ -8,7 +8,8 @@ size_t LockFreeQueue<T, buf_size>::push(const T &val) {
     /** buffer is empty */
     if ((this->tail.load(std::memory_order_acquire) - head) == 1) return buf_size;
     /**
-     * for now I'll handle buf and head/tail overflows that way
+     * for now I'll handle buf and head/tail overflows and 'infinite amount'
+     * of threads that way
      * I'll have to rethink if completely unique id's will be needed
      */
     auto n_head = (head + 1) % buf_size;
